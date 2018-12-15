@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(243, 243, 243);
+}
+
+
+.title-img {
+    height: 300px;
+}
+
+header {
+    text-align: center;
+
+}
+
+.thebutton {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#win {
+    color: green;
+}
+
+#lose {
+    color: red;
+}
+
+.header {
+    transition: width 2s;
+}
+
+#title {
+    text-align: center;
+}
+
+#underscore {
+    padding: 50px;
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.fade-in {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

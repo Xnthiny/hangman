@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Hangman!</title>
+    <!-- Bootstrap CSS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+    <!--Local CSS-->
+    <link rel='stylesheet' href='assets/css/styles.css'>
+    <!-- <link rel='stylesheet' href='assets/css/reset.css'> -->
+</head>
+
+<body>
+    <div class="container-fluid header">
+        <div class="row">
+            <header class='col-12'>
+                <img class='title-img fade-in' src='assets/img/headerimg.png'>
+            </header>
+        </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+        <div class="row">
+            <div class='col-12'>
+                <h3 class='lead' id='title'>Type a letter to guess.</h3>
+                <h3 class='lead center'>Guesses remaining: <span id='guess'></span></h3>
+                <br>
+                <h3 id='win' class='center'></h3>
+                <br>
+                <h3 id='lose' class='center'></h3>
+                <br>
+                <h3 id='restart' class='center lead fade-in'></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-12'>
+                <h1 id='underscore'></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-12 center'>
+                <button type="button" class="btn btn-light"><i class="fas fa-sync-alt"></i>  Reset</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='assets/js/hangman.js'></script>
+</body>
+
+</html>
