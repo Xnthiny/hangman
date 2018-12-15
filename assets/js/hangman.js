@@ -1,5 +1,5 @@
 // Create an array of possible words
-var words = ['function', 'command', 'programming', 'internet', 'server', ' binary']
+var words = ['function', 'command', 'programming', 'internet', 'server', 'binary']
 var randNum = Math.floor(Math.random() * words.length);
 var chosenWord = words[randNum];
 var underScore = [];
@@ -25,6 +25,9 @@ $('#guess').text(guessLeft);
 
 // Get users guess
 document.addEventListener('keypress', function (event) {
+    if(guessLeft == 0){
+        this,document.removeEventListener('keypress');
+    }
     var keyword = String.fromCharCode(event.keyCode)
     // If users guess is right
     if (underScore.join('') == chosenWord) {
@@ -33,7 +36,7 @@ document.addEventListener('keypress', function (event) {
             this.location.reload(true);
         }, delay);
         $('#restart').text('*Restarting*');
-        document.removeEventListener('keypress');
+        this,document.removeEventListener('keypress');
     }
 
     if (chosenWord.indexOf(keyword) > -1) {
@@ -58,14 +61,12 @@ document.addEventListener('keypress', function (event) {
         guessLeft += decrease;
         $('#guess').text(guessLeft);
         console.log(guessLeft);
-        if (guessLeft === 0) {
+        if (guessLeft == 0) {
             $('#lose').text('You lose.')
             setTimeout(function(){
                 this.location.reload(true);
             }, delay);
             $('#restart').text('*Restarting*')
-            document.removeEventListener('keypress');
-            // this.location.reload(true);
         }
     }
     domUnderScore.innerHTML = underScore;
