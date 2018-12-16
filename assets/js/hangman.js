@@ -1,5 +1,5 @@
 // Create an array of possible words
-var words = ['function', 'command', 'programming', 'internet', 'server', 'binary']
+var words = ['function', 'command', 'programming', 'internet', 'server', 'binary', 'automation', 'boolean', 'computer', 'datalog', 'event', 'framework', 'html', 'css', 'javascript', 'react', 'jquery']
 var randNum = Math.floor(Math.random() * words.length);
 var chosenWord = words[randNum];
 var underScore = [];
@@ -7,12 +7,8 @@ var rightWords = [];
 var wrongWords = [];
 var guessLeft = 10;
 var decrease = -1;
-var delay = 4000;
+var delay = 2000;
 var domUnderScore = document.getElementById('underscore');
-// Create underscores based on length of word
-
-// Dom manipulation
-
 var generateUnderscore = (function () {
     for (var i = 0; i < chosenWord.length; i++) {
         underScore.push('_');
@@ -23,20 +19,26 @@ var generateUnderscore = (function () {
 
 $('#guess').text(guessLeft);
 
+$('.btn').click(function () {
+    location.reload(true);
+})
+
+
+
 // Get users guess
 document.addEventListener('keypress', function (event) {
-    if(guessLeft == 0){
-        this,document.removeEventListener('keypress');
+    if (guessLeft == 0) {
+        this, document.removeEventListener('keypress');
     }
     var keyword = String.fromCharCode(event.keyCode)
     // If users guess is right
     if (underScore.join('') == chosenWord) {
         $('#win').text('You win!')
-        setTimeout(function(){
+        setTimeout(function () {
             this.location.reload(true);
         }, delay);
         $('#restart').text('*Restarting*');
-        this,document.removeEventListener('keypress');
+        this, document.removeEventListener('keypress');
     }
 
     if (chosenWord.indexOf(keyword) > -1) {
@@ -63,8 +65,8 @@ document.addEventListener('keypress', function (event) {
         console.log(guessLeft);
         if (guessLeft == 0) {
             $('#reveal').text('The word was: ' + chosenWord + '.');
-            $('#lose').text('You lose.')
-            setTimeout(function(){
+            $('#lose').fadeIn().text('You lose.');
+            setTimeout(function () {
                 this.location.reload(true);
             }, delay);
             $('#restart').text('*Restarting*')
@@ -77,9 +79,4 @@ document.addEventListener('keypress', function (event) {
 
 domUnderScore.innerHTML = generateUnderscore().join(" ");
 console.log(generateUnderscore);
-
-
-$('.btn').click(function () {
-    location.reload(true);
-})
 
