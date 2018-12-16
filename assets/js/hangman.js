@@ -62,6 +62,7 @@ document.addEventListener('keypress', function (event) {
         $('#guess').text(guessLeft);
         console.log(guessLeft);
         if (guessLeft == 0) {
+            $('#reveal').text('The word was: ' + chosenWord + '.');
             $('#lose').text('You lose.')
             setTimeout(function(){
                 this.location.reload(true);
